@@ -3,7 +3,7 @@ Async utilities for FXServer
 
 [INSTALLATION]
 
-Set it as a dependency in you __resource.lua
+Set it as a dependency in you fxmanifest.lua
 
 ```
 server_script '@async/async.lua'
@@ -17,13 +17,13 @@ local tasks = {}
 for i=1, 100, 1 do
 
 	local task = function(cb)
-		
+
 		SetTimeout(1000, function()
 
 			local result = math.random(1, 50000)
 
 			cb(result)
-			
+
 		end)
 
 	end
